@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Employee;
+import services.CustomerServiceImpl;
 import services.EmployeeServiceImpl;
 
 import java.text.ParseException;
@@ -72,7 +73,7 @@ public class FuramaController {
 
     public static void main(String[] args) throws ParseException {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-
+        CustomerServiceImpl customerService = new CustomerServiceImpl();
 
 
 
