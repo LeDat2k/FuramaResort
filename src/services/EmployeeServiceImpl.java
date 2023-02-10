@@ -11,7 +11,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     static {
         try {
             Employee employee = new Employee(
-                    1,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2020-02-03"),true,"025839503","939584930","ledg@mia.colm","cao dang","quan ly", 10000
+                    1,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2020-02-03"),true,"025839503","939584930","lephuocdat@gmail.com","cao dang","quan ly", 10000
             );
             employeeList.add(employee);
         } catch (ParseException ex) {

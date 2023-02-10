@@ -5,9 +5,6 @@ import services.EmployeeServiceImpl;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.time.Month;
-import java.time.Year;
-import java.util.Date;
 import java.util.Scanner;
 
 public class FuramaController {
@@ -75,6 +72,10 @@ public class FuramaController {
 
     public static void main(String[] args) throws ParseException {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
+        Employee e = new Employee(
+            2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com","sau dai hoc","giam doc", 10000
+        );
+        employeeService.addNewEmployee(e);
         employeeService.displayListEmployees();
 
 //        Employee e = new Employee(

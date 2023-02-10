@@ -1,5 +1,6 @@
 package models;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Employee extends Person{
@@ -48,5 +49,20 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-    // khong theo tao con
+    @Override
+    public String toString() {
+
+        return "Employee{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", birthDate=" + new SimpleDateFormat("yyyy-MM-dd").format(birthDate) +
+                ", gender=" + gender +
+                ", cardId='" + cardId + '\'' +
+                ", phone='" + phone + '\'' +
+                ", email='" + email + '\'' +
+                ", level='" + level + '\'' +
+                ", position='" + position + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
