@@ -41,6 +41,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     @Override
     public void addNewEmployee(Employee employee) {
+        for (Employee e : employeeList) {
+            if (e.getId() == employee.getId()) {
+                System.out.println("Employ ID: " + e.getId() + " already exists");
+                return;
+            }
+        }
         employeeList.add(employee);
     }
     @Override
