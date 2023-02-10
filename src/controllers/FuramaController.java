@@ -73,9 +73,17 @@ public class FuramaController {
     public static void main(String[] args) throws ParseException {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         Employee e = new Employee(
-            2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com","sau dai hoc","giam doc", 10000
+            2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
+                "đại học","giám đốc", 10000
         );
         employeeService.addNewEmployee(e);
+        employeeService.displayListEmployees();
+
+        Employee new_e = new Employee(
+                2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
+                "Sau đại học","Quản lý", 10000
+        );
+        employeeService.editEmployee(new_e);
         employeeService.displayListEmployees();
 
 //        Employee e = new Employee(

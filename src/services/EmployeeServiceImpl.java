@@ -11,7 +11,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     static {
         try {
             Employee employee = new Employee(
-                    1,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2020-02-03"),true,"025839503","939584930","lephuocdat@gmail.com","cao dang","quan ly", 10000
+                1,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2000-02-03"),true,"025839503","939584930","lephuocdat@gmail.com","Đại học","Giám đốc", 10000
             );
             employeeList.add(employee);
         } catch (ParseException ex) {
@@ -32,9 +32,16 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
     @Override
     public void editEmployee(Employee employee) {
-        // check if employee already exists
-        if (!employeeList.contains(employee.getId())) return;
-
+        // check if employee doesn't already exists
+        System.out.println();
+        for (Employee e : employeeList) {
+            if (employee.getId() == e.getId()) {
+                employeeList.set(employee.getId()-1, employee);
+                System.out.println("Updated!!");
+                return;
+            }
+        }
+        System.out.println("Employee with ID:" + employee.getId() + " doesn't exists");
     }
 
 

@@ -1,7 +1,10 @@
 package models;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
+import java.util.List;
 
 public class Employee extends Person{
     private String level;
@@ -11,21 +14,38 @@ public class Employee extends Person{
     public String getLevel() {
         return level;
     }
-    //    Trung cấp, Cao đẳng, Đại học và sau đại học
     public void setLevel(String level) {
-        if (level =="Trung cấp" || level=="Đại học" || level=="Sau đại học" || level=="Cao đẳng")
-            this.level = level;
+        // level must be "Trung cấp", "Cao đẳng", "Đại học" và "sau đại học"
+        ArrayList<String> levels = new ArrayList(
+                Arrays.asList("Trung cấp", "Cao đẳng", "Đại học", "Sau đại học")
+        );
+        for (String lv : levels) {
+            if (lv.toLowerCase().equals(level.toLowerCase())) {
+                this.level = level;
+                return;
+            }
+        }
 
+        System.out.println("Wrong employee level");
     }
 
     public String getPosition() {
         return position;
     }
 
-//    Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc.
     public void setPosition(String position) {
-        if (position == "Lễ tân" || position == "phục vụ" || position == "chuyên viên" || position == "giám sát" || position == "quản lý" || position == "giám đốc")
-            this.position = position;
+        //position must be Lễ tân, phục vụ, chuyên viên, giám sát, quản lý, giám đốc.
+        ArrayList<String> positions = new ArrayList(
+           Arrays.asList("Lễ tân", "Phục vụ", "Chuyên viên", "Giám sát", "Quản lý", "Giám đốc")
+        );
+        for (String pos : positions) {
+            if (pos.toLowerCase().equals(position.toLowerCase())) {
+                this.position = position;
+                return;
+            }
+        }
+
+        System.out.println("Wrong employee position");
     }
 
     public double getSalary() {
@@ -36,16 +56,14 @@ public class Employee extends Person{
         this.salary = salary;
     }
 
-//    public Employee() {
-//    }
 
     public Employee(
             int id, String name, Date birthDate, boolean gender, String cardId, String phone, String email,
             String level, String position, double salary
     ) {
         super(id, name, birthDate, gender, cardId, phone, email);
-        this.level = level;
-        this.position = position;
+        setLevel(level);
+        setPosition(position);
         this.salary = salary;
     }
 
