@@ -42,7 +42,13 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void addNewCustomer(Customer customer) {
-
+        for (Customer cus : customerList) {
+            if (cus.getId() == customer.getId()) {
+                System.out.println("Customer ID:" + cus.getId() + " already exists");
+                return;
+            }
+        }
+        customerList.add(customer);
     }
 
     @Override
