@@ -14,13 +14,13 @@ public class CustomerServiceImpl implements CustomerService{
             customerList.add(
                 new Customer(
                     1,"Le",new SimpleDateFormat("yyyy-MM-dd").parse("2000-02-03"),true,"025839503","939584930","lephuocdat@gmail.com",
-                    "Vip", "Hue"
+                    "Diamond", "Hue"
                 )
             );
         customerList.add(
             new Customer(
                 2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
-                "Premium","Quang Ngai"
+                "Platinium","Quang Ngai"
             )
         );
         customerList.add(
@@ -35,7 +35,9 @@ public class CustomerServiceImpl implements CustomerService{
     }
     @Override
     public void displayListCustomer() {
-
+        for (Customer customer : customerList ) {
+            System.out.println(customer.toString());
+        }
     }
 
     @Override

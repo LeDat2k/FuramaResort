@@ -75,6 +75,8 @@ public class FuramaController {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
         CustomerServiceImpl customerService = new CustomerServiceImpl();
 
+        customerService.displayListCustomer();
+
 
 
     }
