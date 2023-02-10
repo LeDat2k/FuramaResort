@@ -10,10 +10,23 @@ public class EmployeeServiceImpl implements EmployeeService {
     static ArrayList<Employee> employeeList = new ArrayList<Employee>();
     static {
         try {
-            Employee employee = new Employee(
-                1,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2000-02-03"),true,"025839503","939584930","lephuocdat@gmail.com","Đại học","Giám đốc", 10000
+            employeeList.add(
+                new Employee(
+                    1,"Le",new SimpleDateFormat("yyyy-MM-dd").parse("2000-02-03"),true,"025839503","939584930","lephuocdat@gmail.com","Đại học","Giám đốc", 10000
+                )
             );
-            employeeList.add(employee);
+            employeeList.add(
+                new Employee(
+                    2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
+                    "đại học","giám đốc", 10000
+                )
+            );
+            employeeList.add(
+                new Employee(
+                    3,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
+                    "đại học","giám đốc", 10000
+                )
+            );
         } catch (ParseException ex) {
             throw new RuntimeException(ex);
         }

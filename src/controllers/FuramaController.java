@@ -72,34 +72,9 @@ public class FuramaController {
 
     public static void main(String[] args) throws ParseException {
         EmployeeServiceImpl employeeService = new EmployeeServiceImpl();
-        Employee e = new Employee(
-            2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
-                "đại học","giám đốc", 10000
-        );
-        employeeService.addNewEmployee(e);
-        employeeService.displayListEmployees();
 
-        Employee new_e = new Employee(
-                2,"Phuoc",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
-                "Sau đại học","Quản lý", 10000
-        );
-        employeeService.editEmployee(new_e);
-        employeeService.displayListEmployees();
 
-//        Employee e = new Employee(
-//            1,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2020-02-03"),true,"025839503","939584930","ledg@mia.colm","cao dang","quan ly", 10000
-//        );
-//        System.out.println(e.getBirthDate());
-//        Date date = new Date();
-//        System.out.println(date.getTime());
-//        String s_date = "2020-02-03";
-//        Date date = new SimpleDateFormat("yyyy-MM-dd").parse("2020-02-03");
-//        System.out.println(date);
 
-//        Scanner scanner = new Scanner(System.in);
-//        String choice = scanner.nextLine();
-//        System.out.println(choice.length());
-//        System.out.println("Cao đẳng".toLowerCase() == "cao đẳng");
 
     }
 }
