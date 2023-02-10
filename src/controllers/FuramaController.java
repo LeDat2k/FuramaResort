@@ -77,6 +77,15 @@ public class FuramaController {
         CustomerServiceImpl customerService = new CustomerServiceImpl();
 
 
+        customerService.editCustomer(
+            new Customer(
+                4,"Dat",new SimpleDateFormat("yyyy-MM-dd").parse("2000-06-23"),true,"0953343533","939584930","ledat@gmail.com",
+                "Silver","Nghe An"
+            )
+        );
+
+
+
 
     }
 }

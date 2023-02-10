@@ -53,6 +53,16 @@ public class CustomerServiceImpl implements CustomerService{
 
     @Override
     public void editCustomer(Customer customer) {
-
+        // check if employee doesn't already exists
+        System.out.println();
+        for (Customer c : customerList) {
+            if (customer.getId() == c.getId()) {
+                customerList.set(customer.getId()-1, customer);
+                System.out.println("Updated!!");
+                return;
+            }
+        }
+        System.out.println("Customer with ID:" + customer.getId() + " doesn't exists");
     }
+
 }
